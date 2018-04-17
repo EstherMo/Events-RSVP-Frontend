@@ -14,7 +14,7 @@ class Rsvps extends Component {
       getEvents = () => {
         axios
           .get(
-            `http://localhost:8080/programs`
+            process.env.REACT_APP_HOST +`/programs`
           )
           .then(response => { console.log("response",response.data),this.setState({ events: response.data });
         });

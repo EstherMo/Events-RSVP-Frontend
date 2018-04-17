@@ -4,18 +4,20 @@ import { Link } from "react-router-dom";
 
 class SingleItem extends Component {
     state = {}
-    // saveEvent = () => {
-    //     axios
-    //       .post(`http://localhost:8080/programs`, {eventName: this.props.location.state.name, programDate: this.props.location.state.startDate, location: this.props.location.state.location, category: this.props.location.state.category}).then(response => {
-    //         console.log('saved successfully')
-    //     });
-    //   };
     saveEvent = () => {
         axios
-          .post(`http://localhost:8080/participants/1/13`).then(response => {
+          .post(process.env.REACT_APP_HOST + `/programs`, {eventName: this.props.location.state.name, programDate: this.props.location.state.startDate, location: this.props.location.state.location, category: this.props.location.state.category}).then(response => {
             console.log('saved successfully')
         });
       };
+
+    //save to this participants event list
+    // saveEvent = () => {
+    //     axios
+    //       .post(process.env.REACT_APP_HOST + `/participants/1/13`).then(response => {
+    //         console.log('saved successfully')
+    //     });
+    //   };
     render() { 
         console.log("location state",this.props)
         return ( 
