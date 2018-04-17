@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Muli');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+
 .App {
   text-align: center;
 }
@@ -8,15 +12,15 @@
 }
 
 .App-header {
-  background-color: rgba(15, 38, 92, 0.5);
-  height: 150px;
+  background-color: rgba(139, 104, 102, 0.5);
+  height: 80px;
   padding: 20px;
-  /* color: white; */
+  font-family: 'Press Start 2P';
 }
 
 .App-title {
   font-size: 2.5em;
-  color: white;
+  color: #1A1528;
   text-align: center;
 }
 
@@ -24,36 +28,50 @@
   font-size: large;
 }
 
-.meetings {
+.markets {
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100pt;
   width: 25%;
-  background-color: rgba(15, 253, 219,.50);
+  background-color: rgba(129, 104, 152,.50);
   color: black;
   text-align: center;
   margin: 80px 20px 10px 90px; 
   float: left;
   padding: 20px;
-  font-size: 2.0em;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 3.0em;
+  font-family: Muli;
+  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
 }
 
-.awards {
+.parades {
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: black;
   padding: 20px;
-  font-size: 2.0em;
+  font-size: 3.0em;
   height: 100pt;
   width: 25%;
   font: sans-serif;
   text-align: center;
   margin: 80px 20px 10px 20px; 
-  background-color: rgba(1, 255, 9,.50);
+  background-color: rgba(129, 104, 152,.50);
   float: left;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: Muli;
+  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
 }
 
-.notices {
+.street-events {
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
-  font-size: 2.0em;
+  font-size: 3.0em;
   height: 100pt;
   width: 25%;
   color: black;
@@ -61,18 +79,65 @@
   text-align: center;
   margin: 80px 20px 10px 20px; 
   float: left;
-  background-color: rgba(255, 113, 60,.50);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: rgba(129, 104, 152,.50);
+  font-family: Muli;
+  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
 }
 .text{
   color: white;
   padding: 20px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: Muli;
 }
+
+.menu {
+  margin-top: 80pt;
+}
+
+#list {
+ height: 100pt;
+ width: 29%;
+ background-color:rgba(188, 104, 80,.50);
+ float: left;
+ margin: 20pt;
+ text-align: center;
+ font-family: Muli;
+ border-radius: 25px;
+ font-size: 1em;
+}
+#single_item{
+  height: 205pt;
+  width: 50%;
+  background-color:rgba(188, 104, 80,.50);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-family: Muli;
+  float: center;
+  margin-top: 10%;
+  margin-left: 25%;
+  border-radius: 25px;
+}
+
+.home {
+  text-align: left;
+  margin-left: 40pt;
+}
+
+.home2 {
+  text-align: center;
+  margin-top: 20pt;
+}
+
+.home3 {
+  text-align: center;
+  margin-top: 10px;
+}
+
 body {
   /* background-image: url("https://c1.staticflickr.com/1/126/387606063_408c203f6c_b.jpg"); */
   background-color: #cccccc;
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url("https://c1.staticflickr.com/1/126/387606063_408c203f6c_b.jpg")
+  background-size:cover;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url("https://bit.ly/2JiU8xy")
 }
 
 a {
@@ -82,11 +147,24 @@ a {
 a:hover {
   text-decoration: underline;
 }
-.single_item{
-  color: white;
-  padding: 20px;
 
+footer {
+  color: white;
+  font-family: Muli;
+  position: fixed;
+  left: 0;
+  bottom: 10pt;
+  text-align: right;
+  width: 100%;
+  font-size: 2em;
 }
+
+footer p{
+  margin-right: 20px;
+}
+
+
+/* Media queries  */
 @media only screen and (max-width: 600px) {
   .menu {
     font-size: 1em;
@@ -98,3 +176,126 @@ a:hover {
     font-size: .5em;
   }
 }
+
+
+/* all things buttons  */
+
+.button {
+  display: inline-block;
+  border-radius: 10px;
+  background-color:rgba(55,61,95,0.6); 	
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  margin-left: 42%;
+  margin-top: 15px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* rsvp list items  */
+.rsvps{
+  width: 100%;
+  margin: 10px;
+  height: 20px;
+}
+.rsvps p{
+  font-family: Muli;
+  color: white;
+  text-align: center;
+  font-size: 3em;
+}
+
+.list-type3{
+  margin:0 auto;
+  width:500px;
+  }
+  .list-type3 li, .list-type3 a{
+  list-style-type: none;    
+  float:left;
+  height:35px;
+  line-height:35px;
+  position:relative;
+  font-size:15px;
+  margin-bottom: 12px;
+  font-family: 'Muli';
+  transition: background-color 1.5s ease;
+  }
+  .list-type3 a{
+  padding:0 60px 0 12px;
+  background: rgba(129, 104, 152,.90);
+  color:#fff;
+  text-decoration:none;
+  -moz-border-radius-bottomright:4px;
+  -webkit-border-bottom-right-radius:4px;
+  border-bottom-right-radius:4px;
+  -moz-border-radius-topright:4px;
+  -webkit-border-top-right-radius:4px;
+  border-top-right-radius:4px;
+  }
+  
+  .list-type3 a:before{
+  content:"";
+  float:left;
+  position:absolute;
+  top:0;
+  left:-12px;
+  width:0;
+  height:0;
+  border-color:transparent rgba(129, 104, 152) transparent transparent;
+  border-style:solid;
+  border-width: 18px 12px 18px 0;
+  }
+  
+  .list-type3 a:after{
+  content:"";
+  position:absolute;
+  top:15px;
+  left:0;
+  float:left;
+  width:6px;
+  height:6px;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+  border-radius:2px;
+  background:#fff;
+  -moz-box-shadow:-1px -1px 2px rgba(129, 104, 152);
+  -webkit-box-shadow:-1px -1px 2px rgba(129, 104, 152);
+  box-shadow:-1px -1px 2px rgba(129, 104, 152);
+  }
+  .list-type3 a:hover{
+  background:rgba(129, 104, 152,.30);
+  }
+  
+  .list-type3 a:hover:before{
+  border-color:transparent rgba(129, 104, 152,.30) transparent transparent;
+  }

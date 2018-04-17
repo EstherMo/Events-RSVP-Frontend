@@ -4,26 +4,33 @@ import { Link } from "react-router-dom";
 
 class SingleItem extends Component {
     state = {}
-    saveRecord = () => {
+    // saveEvent = () => {
+    //     axios
+    //       .post(`http://localhost:8080/programs`, {eventName: this.props.location.state.name, programDate: this.props.location.state.startDate, location: this.props.location.state.location, category: this.props.location.state.category}).then(response => {
+    //         console.log('saved successfully')
+    //     });
+    //   };
+    saveEvent = () => {
         axios
-          .post(`http://localhost:8080/records`, { urlLink: `${this.props.location.state.document}`, category: `${this.props.location.state.category}` }).then(response => {
+          .post(`http://localhost:8080/participants/1/13`).then(response => {
             console.log('saved successfully')
         });
       };
     render() { 
         console.log("location state",this.props)
         return ( 
-            <div className="single_item">
-                <h2> {this.props.location.state.title}</h2>
-                <p> <b>Agency:</b> {this.props.location.state.agency}</p>
-                <p> <b>Document Link: </b> 
-                <a href={this.props.location.state.document}>{this.props.location.state.document}</a> 
-                </p>
-                <p> <b>Date:</b> {this.props.location.state.date}</p>
-                <p> <b>Category:</b> {this.props.location.state.category}</p>
-                <button onClick={this.saveRecord()}> Save Record </button>
-                <Link to="/">    Home</Link>
+            <div>
+                <div id="single_item">
+                <h2> {this.props.location.state.name}</h2>
+                <p> Where to gather: {this.props.location.state.location}</p>
+                <p>  <b>This event is happening from </b> {this.props.location.state.startTime} to {this.props.location.state.endTime} in {this.props.location.state.borough} on {this.props.location.state.startDate}</p>
+                </div>
+                <button className= "button" styles="vertical-align:middle" onClick={this.saveEvent}> <span><Link to="/rsvps">RSVP to Event</Link> </span> </button>
+
+                <div className="home2"> <Link to="/">take me home</Link> </div>
+
             </div>
+            
          )
     }
 }

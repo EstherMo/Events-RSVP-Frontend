@@ -1,27 +1,21 @@
 import React, { Component } from "react";
 import axios from "axios";
 import SingleItem from "./SingleItem";
-
-import {
-    BrowserRouter as Router,
-    Link,
-    Route,
-    Switch,
-  } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 class List extends Component {
   constructor() {
     super();
     this.state = {
-      itemDetails: []
+      eventDetails: []
     };
   }
   getList = () => {
     axios
       .get(
-        `https://data.cityofnewyork.us/resource/buex-bi6w.json?type_of_notice_description=${this.props.type}&$limit=10`
+        `https://data.cityofnewyork.us/resource/8end-qv57.json?event_type=${this.props.type}&$limit=30`
       )
-      .then(response => {this.setState({ itemDetails: response.data });
+      .then(response => { console.log("response",response),this.setState({ eventDetails: response.data });
     });
   };
 
@@ -31,24 +25,33 @@ class List extends Component {
   render() {
     return (
       <div className="text list">
-        <h1> {this.props.type} list </h1>
-        {this.state.itemDetails.map((item, index) => {
+        <h2 className="text"> {this.props.type}s </h2>
+        <div className="home"> <Link to="/">take me home</Link> </div>
+        {this.state.eventDetails.map((event, index) => {
+          let startDate = new Date(event.start_date_time);
+          let endDate = new Date(event.end_date_time);
+          //console.log("time", startDate.toLocaleTimeString(),"date",startDate.toDateString());
+          console.log("event",event);
           return (
+            <div id="list">
             <Link key={index} to={{
-                pathname: `/item/${index + 1}`,
+                pathname: `/event/${index +1} `,
                 state: { 
-                  title: `${item.short_title}`,
-                  category: `${item.section_name}`,
-                  agency: `${item.agency_name}`,
-                  document:`${item.document_links}`,
-                  date: `${item.start_date}`
+                  agency: `${event.event_agency}`,
+                  name: `${event.event_name}`,
+                  location: `${event.event_location}`,
+                  borough:`${event.event_borough}`,
+                  startDate: `${startDate.toDateString()}`,
+                  endDate: `${endDate.toDateString()}`,
+                  startTime: `${startDate.toLocaleTimeString()}`,
+                  endTime: `${endDate.toLocaleTimeString()}`,
+                  category: this.props.type,
             }
             }}> 
-            <br/> <ul> <li>{item.short_title}</li></ul> </Link>
+            <br/> <br/> {event.event_name} <br/> on <br/>  {startDate.toDateString()} </Link> </div>
           );
-
         })}
-        <br/><br/> <Link to="/">Home</Link>
+        <br/><br/> 
         <p />
       </div>
     );
