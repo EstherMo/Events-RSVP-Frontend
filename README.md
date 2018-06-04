@@ -1,3 +1,4 @@
+# Gather
 
 This is an app helping people in NYC meet and gather at public events in the city. 
 
