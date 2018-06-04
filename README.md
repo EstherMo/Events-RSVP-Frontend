@@ -1,6 +1,6 @@
 # Gather
 
-This is an app helping people in NYC meet and gather at public events in the city. 
+This is an app helping people in NYC meet and gather at public events in the city. This is the frontend, see this repo for the backend:  https://github.com/EstherMo/Events-RSVP-Backend. 
 
 ## Features
 - ability to see events by category
